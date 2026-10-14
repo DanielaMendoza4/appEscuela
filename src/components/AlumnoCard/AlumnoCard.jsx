@@ -1,7 +1,23 @@
 // src/components/AlumnoCard/AlumnoCard.jsx
-const AlumnoCard = ({ nombre, carrera, estado }) => {
-    // Lógica simple para cambiar el color del badge según el estado
+import { useState } from 'react';
+
+// 1. Usamos 'estadoInicial' como Prop para setear el estado de React
+const AlumnoCard = ({ nombre, carrera, estadoInicial }) => {
+    
+    // 2. Creamos el estado dinámico
+    const [estado, setEstado] = useState(estadoInicial);
+
+    // 3. Lógica dinámica para el color del badge (depende de la variable local 'estado')
     const badgeColor = estado === 'Matriculado' ? 'bg-success' : 'bg-secondary';
+
+    // 4. Función para alternar el estado
+    const cambiarEstado = () => {
+        if (estado === 'Matriculado') {
+            setEstado('Inactivo');
+        } else {
+            setEstado('Matriculado');
+        }
+    };
 
     return (
         <div className="col-md-4 mb-3">
@@ -12,12 +28,16 @@ const AlumnoCard = ({ nombre, carrera, estado }) => {
                     <hr />
                     
                     <div className="d-flex justify-content-between align-items-center">
-                        {/* Corregido con backticks y llaves correctas */}
+                        {/* El badge ahora lee el 'estado' dinámico y el color correcto */}
                         <span className={`badge ${badgeColor}`}>{estado}</span>
                         
                         <div>
-                            <button className="btn btn-sm btn-outline-warning me-2">
-                                Editar
+                            {/* Le agregamos el evento onClick a este botón para que cambie el estado al hacer clic */}
+                            <button 
+                                className="btn btn-sm btn-outline-warning me-2"
+                                onClick={cambiarEstado}
+                            >
+                                Cambiar Estado
                             </button>
                             <button className="btn btn-sm btn-outline-danger">
                                 Eliminar

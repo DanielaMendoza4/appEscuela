@@ -5,12 +5,13 @@ import viteLogo from './assets/vite.svg'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import AlumnoCard from './components/AlumnoCard/AlumnoCard';
+import Contador from './components/Contador/Contador';
 
 function App() {
     return (
         <>
             <Navbar />
-            
+
             <div className="container mt-4">
                 <h2 className="mb-4">Directorio de Alumnos</h2>
                 
@@ -27,53 +28,57 @@ function App() {
                     <AlumnoCard
                         nombre="Daniel Puccio"
                         carrera="Desarrollo de Software"
-                        estado="Matriculado"
+                        estadoInicial="Matriculado"
                     />
                     <AlumnoCard
                         nombre="Maria Perez"
                         carrera="Diseño Gráfico"
-                        estado="Inactivo"
+                        estadoInicial="Inactivo"
                     />
                     <AlumnoCard
                         nombre="Carlos Mendoza"
                         carrera="Administración Industrial"
-                        estado="Matriculado"
+                        estadoInicial="Matriculado"
                     />
 
                     {/* Fila 2 */}
                     <AlumnoCard
                         nombre="Ana Gómez"
                         carrera="Redes y Seguridad"
-                        estado="Matriculado"
+                        estadoInicial="Matriculado"
                     />
                     <AlumnoCard
                         nombre="Luis Flores"
                         carrera="Desarrollo de Software"
-                        estado="Inactivo"
+                        estadoInicial="Inactivo"
                     />
                     <AlumnoCard
                         nombre="Elena Torres"
                         carrera="Diseño Gráfico"
-                        estado="Matriculado"
+                        estadoInicial="Matriculado"
                     />
 
                     {/* Fila 3 */}
                     <AlumnoCard
                         nombre="Jorge Ramirez"
                         carrera="Mantenimiento de Sistemas"
-                        estado="Matriculado"
+                        estadoInicial="Matriculado"
                     />
                     <AlumnoCard
                         nombre="Sofía Castro"
                         carrera="Administración Industrial"
-                        estado="Inactivo"
+                        estadoInicial="Inactivo"
                     />
                     <AlumnoCard
                         nombre="Pedro Ortiz"
                         carrera="Redes y Seguridad"
-                        estado="Matriculado"
+                        estadoInicial="Matriculado"
                     />
                 </div>
+
+                <Contador
+                
+                />
             </div>
         </>
     );
